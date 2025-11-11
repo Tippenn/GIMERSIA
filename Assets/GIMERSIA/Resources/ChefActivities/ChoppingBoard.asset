@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ChoppingBoard
   m_EditorClassIdentifier: 
   id: 0
-  activityName: 
-  activityIcon: {fileID: 0}
-  activityDescription: 
+  activityName: Chopping Board
+  activityIcon: {fileID: 21300000, guid: dace05061732347409d48553a3d74ded, type: 3}
+  activityDescription: Motong

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81cca55f9f5641b40b1a19d32c3efce5, type: 3}
   m_Name: GrabTomato
   m_EditorClassIdentifier: 
-  id: 0
-  activityName: 
-  activityIcon: {fileID: 0}
+  id: 4
+  activityName: Grab Tomato
+  activityIcon: {fileID: 21300000, guid: c1092982ad546024fad5032a0b6c5651, type: 3}
   activityDescription: 

@@ -8,5 +8,8 @@ public class TomatoLettuceSalad : MonoBehaviour, IHoldable, IRecipe
     public List<int> GetIngredientID() => ingredientID;
     public GameObject GetGO() => gameObject;
 
-
+    public void SetIngredientID(List<int> ingredientID)
+    {
+        this.ingredientID = ingredientID;
+    }
 }

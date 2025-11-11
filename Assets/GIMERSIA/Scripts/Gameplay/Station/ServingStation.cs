@@ -1,15 +1,21 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Android.Gradle.Manifest;
+
 public class ServingStation : MonoBehaviour, IInteractable, ITaskSource
 {
+    [Header("Static Data")]
+    [SerializeField] private int activityID;
+
     [Header("Dynamic Data")]
     [SerializeField] bool isOccupied;
+
     [Header("Reference")]
+    [SerializeField] private FoodOrderSystem foodOrderSystem;
     [SerializeField] Transform interactionPoint;
-    [SerializeField] Sprite icon;
 
     public Vector3 GetInteractionPoint() => interactionPoint.position;
-    public Sprite GetIcon() => icon;
+    public Sprite GetIcon() => GameplayManager.Instance.GetChefActivitiesData.chefActivityList[GameplayManager.Instance.GetChefActivitiesData.chefActivityList.FindIndex(x => x.id == activityID)].activityIcon;
     public IInteractable GetInteractable() => this;
     public bool IsOccupied() => isOccupied;
 
@@ -21,6 +27,7 @@ public class ServingStation : MonoBehaviour, IInteractable, ITaskSource
         {
             IHoldable item = chef.GetHeldItem;
             PlaceItem(item, chef);
+            item.GetGO();
         }
         isOccupied = false;
         yield return null;
@@ -30,5 +37,11 @@ public class ServingStation : MonoBehaviour, IInteractable, ITaskSource
     private void PlaceItem(IHoldable holdable, ChefController chef)
     {
         chef.DropItem();
+        Destroy(holdable.GetGO());
+        if(holdable is IRecipe recipe)
+        {
+            FoodOrderSystem.Instance.GiveItem(recipe);
+        }
+        
     }
 }

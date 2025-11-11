@@ -6,5 +6,6 @@ public class RecipeInformation : ScriptableObject
 {
     public string recipeName;
     public GameObject recipePrefab;
-    public List<int> recipeIDList;
+    public int recipeID;
+    public List<int> ingredientIDList;
 }

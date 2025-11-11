@@ -1,14 +1,19 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DragDropTaskSystem : MonoBehaviour
 {
-    [Header("UI")]
-    [SerializeField] Canvas uiCanvas; // Screen Space - Overlay (or Camera) canvas for drag icon
-    [SerializeField] GameObject dragIconPrefab; // prefab with Image component
+    [Header("Static Data")]
+    [SerializeField] GameObject dragIconPrefab;
     [SerializeField] LayerMask worldRaycastMask = ~0;
+
+    [Header("Dynamic Data")]
+    [SerializeField] private bool isInit;
+
+    [Header("Reference")]
+    [SerializeField] Canvas uiCanvas;
+    
 
     private ITaskSource draggedSource;
     private GameObject dragIconInstance;
@@ -20,8 +25,15 @@ public class DragDropTaskSystem : MonoBehaviour
         mainCamera = Camera.main;
     }
 
+    public void Initialize(GameplayManager gameplayManager)
+    {
+        isInit = true;
+    }
+
     void Update()
     {
+        if (!isInit) return;
+
         // Start dragging
         if (Input.GetMouseButtonDown(0))
         {

@@ -5,14 +5,14 @@ using UnityEngine;
 public class RecipeDatabase : Singleton<RecipeDatabase>
 {
     [Header("Static Data")]
-    [SerializeField] private RecipeData recipeData;
+    [SerializeField] private ItemInformationDatabase itemDatabase;
 
     public bool CanCombine(IRecipe recipeA, IRecipe recipeB)
     {
         List<int> combinedRecipe = recipeA.GetIngredientID().Concat(recipeB.GetIngredientID()).ToList();
-        foreach(RecipeInformation recipe in recipeData.recipeList)
+        foreach(ItemInformation item in itemDatabase.itemData)
         {
-            if (HaveSameElements(combinedRecipe, recipe.recipeIDList))
+            if (HaveSameElements(combinedRecipe, item.ingredientID))
                 return true;
         }
         return false;
@@ -21,9 +21,9 @@ public class RecipeDatabase : Singleton<RecipeDatabase>
     public bool CanCombine(List<int> recipeA, List<int> recipeB)
     {
         List<int> combinedRecipe = recipeA.Concat(recipeB).ToList();
-        foreach (RecipeInformation recipe in recipeData.recipeList)
+        foreach (ItemInformation item in itemDatabase.itemData)
         {
-            if (HaveSameElements(combinedRecipe, recipe.recipeIDList))
+            if (HaveSameElements(combinedRecipe, item.ingredientID))
                 return true;
         }
         return false;
@@ -35,11 +35,11 @@ public class RecipeDatabase : Singleton<RecipeDatabase>
         IHoldable itemA = recipeA as IHoldable;
         IHoldable itemB = recipeB as IHoldable;
         IHoldable combineItem;
-        foreach (RecipeInformation recipe in recipeData.recipeList)
+        foreach (ItemInformation item in itemDatabase.itemData)
         {
-            if (HaveSameElements(combinedRecipe, recipe.recipeIDList))
+            if (HaveSameElements(combinedRecipe, item.ingredientID))
             {
-                GameObject gameObject = Instantiate(recipe.recipePrefab);
+                GameObject gameObject = Instantiate(item.itemPrefab);
                 Destroy(itemA.GetGO());
                 Destroy(itemB.GetGO());
                 combineItem = gameObject.GetComponent<IHoldable>();
