@@ -20,6 +20,8 @@ public class ChefController : MonoBehaviour, IInteractor, ITaskReceiver
     [Header("Event")]
     public UnityEvent<ChefTask> OnQueueUpdated;
     public UnityEvent OnQueueEmpty;
+    public UnityEvent onChefMove;
+    public UnityEvent onChefStop;
 
     public IHoldable GetHeldItem => heldItem;
     public bool IsHoldingItem => heldItem != null;
@@ -48,10 +50,11 @@ public class ChefController : MonoBehaviour, IInteractor, ITaskReceiver
             // Move to target
             Vector3 dest = current.Target.GetInteractionPoint();
             agent.SetDestination(dest);
-
+            onChefMove?.Invoke();
             while (agent.pathPending || agent.remainingDistance > agent.stoppingDistance)
                 yield return null;
 
+            onChefStop?.Invoke();
             yield return current.Target.OnInteract(this);
         }
 

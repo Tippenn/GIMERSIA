@@ -1,20 +1,22 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Android.Gradle.Manifest;
 
 public class CuttingBoard : MonoBehaviour, IInteractable, ITaskSource
 {
     [Header("Static Data")]
     [SerializeField] private float chopBaseTime;
+    [SerializeField] private int activityID;
+
     [Header("Dynamic Data")]
     [SerializeField] IHoldable currentItem;
     [SerializeField] bool isOccupied;
     [Header("Reference")]
     [SerializeField] Transform itemParent;
     [SerializeField] Transform interactionPoint;
-    [SerializeField] Sprite icon;
 
     public Vector3 GetInteractionPoint() => interactionPoint.position;
-    public Sprite GetIcon() => icon;
+    public Sprite GetIcon() => GameplayManager.Instance.GetChefActivitiesData.chefActivityList[GameplayManager.Instance.GetChefActivitiesData.chefActivityList.FindIndex(x => x.id == activityID)].activityIcon;
     public IInteractable GetInteractable() => this;
     public bool IsOccupied() => isOccupied;
 
