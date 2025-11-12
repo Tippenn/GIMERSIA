@@ -22,7 +22,15 @@ public class MainMenuManager : Singleton<MainMenuManager>
         SaveObject_GameContext gameContext = SaveSystem.LoadObject<SaveObject_GameContext>(GameManager.Instance.GameContextLocation);
         if(gameContext != null)
         {
-            unlockedLevel = gameContext.UnlockedLevel;
+            if(gameContext.UnlockedLevel > 2)   
+            {
+                unlockedLevel = 2;
+            }
+            else
+            {
+                unlockedLevel = gameContext.UnlockedLevel;
+            }
+            
         }
         else
         {
