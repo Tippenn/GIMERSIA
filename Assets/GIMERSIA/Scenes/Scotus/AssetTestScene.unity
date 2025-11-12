@@ -3504,6 +3504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot1
       objectReference: {fileID: 0}
+    - target: {fileID: 2323084648643384750, guid: 56039fa7ba16a554982d276bc9629e11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5920861116582332356, guid: 56039fa7ba16a554982d276bc9629e11, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.79
@@ -4616,6 +4620,10 @@ PrefabInstance:
     - target: {fileID: 3992427154989972490, guid: 217961388c9b6b24da5206777536393f, type: 3}
       propertyPath: m_Name
       value: Robot2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3992427154989972490, guid: 217961388c9b6b24da5206777536393f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
