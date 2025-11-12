@@ -9,6 +9,7 @@ public class ChefController : MonoBehaviour, IInteractor, ITaskReceiver
     [Header("Static Data")]
     [Header("Dynamic Data")]
     private Queue<ChefTask> taskQueue = new Queue<ChefTask>();
+    [SerializeField] private ChefTask currentTask;
     private IHoldable heldItem;
     private bool isBusy = false;
 
@@ -18,11 +19,15 @@ public class ChefController : MonoBehaviour, IInteractor, ITaskReceiver
     [SerializeField] private Transform heldItemParent;
 
     [Header("Event")]
-    public UnityEvent<ChefTask> OnQueueUpdated;
+    public UnityEvent OnQueueUpdated;
+    public UnityEvent<ChefTask> OnQueueWorkOn;
     public UnityEvent OnQueueEmpty;
     public UnityEvent onChefMove;
     public UnityEvent onChefStop;
 
+    public ChefController Chef => this;
+    public Queue<ChefTask> TaskQueue => taskQueue;
+    public ChefTask CurrentTask => currentTask;
     public IHoldable GetHeldItem => heldItem;
     public bool IsHoldingItem => heldItem != null;
 
@@ -34,7 +39,7 @@ public class ChefController : MonoBehaviour, IInteractor, ITaskReceiver
     public void AddTask(ChefTask task)
     {
         taskQueue.Enqueue(task);
-        OnQueueUpdated?.Invoke(task);
+        OnQueueUpdated?.Invoke();
         if (!isBusy)
             StartCoroutine(ProcessNextTask());
     }
@@ -44,18 +49,19 @@ public class ChefController : MonoBehaviour, IInteractor, ITaskReceiver
         while (taskQueue.Count > 0)
         {
             isBusy = true;
-            ChefTask current = taskQueue.Dequeue();
-            OnQueueUpdated?.Invoke(current); // update UI
+            currentTask = taskQueue.Dequeue();
+            OnQueueUpdated?.Invoke(); // update UI
+            OnQueueWorkOn?.Invoke(currentTask);
 
             // Move to target
-            Vector3 dest = current.Target.GetInteractionPoint();
+            Vector3 dest = currentTask.Target.GetInteractionPoint();
             agent.SetDestination(dest);
             onChefMove?.Invoke();
             while (agent.pathPending || agent.remainingDistance > agent.stoppingDistance)
                 yield return null;
 
             onChefStop?.Invoke();
-            yield return current.Target.OnInteract(this);
+            yield return currentTask.Target.OnInteract(this);
         }
 
         isBusy = false;
@@ -64,6 +70,7 @@ public class ChefController : MonoBehaviour, IInteractor, ITaskReceiver
 
     public void HoldItem(GameObject itemGO)
     {
+        AudioManager.Instance.PlaySFXOneShot(AudioManager.Instance.item);
         IHoldable holdable = itemGO.GetComponent<IHoldable>();
         itemGO.transform.SetParent(heldItemParent);
         itemGO.transform.localPosition = Vector3.zero;

@@ -104,7 +104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6360494512724358691}
+  - {fileID: 46496112450750720}
   m_Father: {fileID: 5434253682547955567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8047106794451892339
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientCrate: {fileID: 5888361665000557174}
-  animator: {fileID: 7625658574758345888}
---- !u!1001 &732399818926127628
+  animator: {fileID: 6303124048242510550}
+--- !u!1001 &8045192351341068477
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -129,62 +129,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4888625365350030843}
     m_Modifications:
-    - target: {fileID: 1309818866446397680, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
-      propertyPath: m_Name
-      value: CucumberChest
-      objectReference: {fileID: 0}
-    - target: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
+    - target: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
+    - target: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
+    - target: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
+    - target: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
+    - target: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
+    - target: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
+    - target: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
+    - target: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
+    - target: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
+    - target: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8448635099996962233, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
+      propertyPath: m_Name
+      value: CucumberChest_V2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
---- !u!4 &6360494512724358691 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
+--- !u!4 &46496112450750720 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5939972816289352751, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
-  m_PrefabInstance: {fileID: 732399818926127628}
+  m_CorrespondingSourceObject: {fileID: 7999356276579469757, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
+  m_PrefabInstance: {fileID: 8045192351341068477}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7625658574758345888 stripped
+--- !u!95 &6303124048242510550 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 7204010989149685420, guid: b231af7fcf95e5647b06f3c690135b73, type: 3}
-  m_PrefabInstance: {fileID: 732399818926127628}
+  m_CorrespondingSourceObject: {fileID: 4098119789395331691, guid: 413fc77168db6c541b7fd0f938f4309c, type: 3}
+  m_PrefabInstance: {fileID: 8045192351341068477}
   m_PrefabAsset: {fileID: 0}

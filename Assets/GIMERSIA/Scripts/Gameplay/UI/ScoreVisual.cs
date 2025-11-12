@@ -12,9 +12,11 @@ public class ScoreVisual : MonoBehaviour
     private void Start()
     {
         gameplayManager = GameplayManager.Instance;
+        gameplayManager.onStatChange.AddListener(OnStatChange_ChangeCoinAmount);
     }
-    private void Update()
+
+    public void OnStatChange_ChangeCoinAmount()
     {
-        scoreText.text = gameplayManager.CurrentScore.ToString();
+        scoreText.text = gameplayManager.CurrentScore.ToString("F0");
     }
 }

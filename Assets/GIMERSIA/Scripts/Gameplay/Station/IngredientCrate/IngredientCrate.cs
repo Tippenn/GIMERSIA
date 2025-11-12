@@ -27,7 +27,7 @@ public class IngredientCrate : MonoBehaviour, IInteractable, ITaskSource
     {
         if (chef.IsHoldingItem)
         {
-
+            AudioManager.Instance.PlaySFXOneShot(AudioManager.Instance.warning);
         }
         else
         {

@@ -27,7 +27,6 @@ public class ServingStation : MonoBehaviour, IInteractable, ITaskSource
         {
             IHoldable item = chef.GetHeldItem;
             PlaceItem(item, chef);
-            item.GetGO();
         }
         isOccupied = false;
         yield return null;
@@ -40,6 +39,7 @@ public class ServingStation : MonoBehaviour, IInteractable, ITaskSource
         Destroy(holdable.GetGO());
         if(holdable is IRecipe recipe)
         {
+            AudioManager.Instance.PlaySFXOneShot(AudioManager.Instance.bellOrder);
             FoodOrderSystem.Instance.GiveItem(recipe);
         }
         

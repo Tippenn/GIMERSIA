@@ -104,7 +104,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4963661080849064877}
+  - {fileID: 1191908503292852217}
   m_Father: {fileID: 5434253682547955567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1838719921145202098
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientCrate: {fileID: 6791111019032580292}
-  animator: {fileID: 179913109865871103}
---- !u!1001 &8609447503999661833
+  animator: {fileID: 951953529238765991}
+--- !u!1001 &3449757709267979525
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -129,62 +129,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4888625365350030843}
     m_Modifications:
-    - target: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
+    - target: {fileID: 2095524752041930652, guid: fe9ae34df80a721458584e314948dcef, type: 3}
+      propertyPath: m_Name
+      value: TomatoChest_V2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
+    - target: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
+    - target: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
+    - target: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
+    - target: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
+    - target: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
+    - target: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
+    - target: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
+    - target: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
+    - target: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6306562462950881288, guid: 988c1d24359e677459308f790749672a, type: 3}
-      propertyPath: m_Name
-      value: TomatoChest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 988c1d24359e677459308f790749672a, type: 3}
---- !u!95 &179913109865871103 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: fe9ae34df80a721458584e314948dcef, type: 3}
+--- !u!95 &951953529238765991 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 8432366771645202934, guid: 988c1d24359e677459308f790749672a, type: 3}
-  m_PrefabInstance: {fileID: 8609447503999661833}
+  m_CorrespondingSourceObject: {fileID: 2510199250053336226, guid: fe9ae34df80a721458584e314948dcef, type: 3}
+  m_PrefabInstance: {fileID: 3449757709267979525}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4963661080849064877 stripped
+--- !u!4 &1191908503292852217 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3717881572422407332, guid: 988c1d24359e677459308f790749672a, type: 3}
-  m_PrefabInstance: {fileID: 8609447503999661833}
+  m_CorrespondingSourceObject: {fileID: 4569607897840679676, guid: fe9ae34df80a721458584e314948dcef, type: 3}
+  m_PrefabInstance: {fileID: 3449757709267979525}
   m_PrefabAsset: {fileID: 0}

@@ -63,10 +63,16 @@ public class CuttingBoard : MonoBehaviour, IInteractable, ITaskSource
     {
         isOccupied = true;
         float chopProgress = 0f;
+        float lastChopSound = 0f;
 
         while (chopProgress < chopBaseTime)
         {
             chopProgress += Time.deltaTime;
+            if(chopProgress > lastChopSound)
+            {
+                lastChopSound += 0.3f;
+                AudioManager.Instance.PlaySFXOneShot(AudioManager.Instance.cuttingBoard);
+            }
             yield return null;
         }
 

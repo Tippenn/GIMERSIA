@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -7,19 +8,19 @@ public class DragDropTaskSystem : MonoBehaviour
     [Header("Static Data")]
     [SerializeField] GameObject dragIconPrefab;
     [SerializeField] LayerMask worldRaycastMask = ~0;
+    private GameObject dragIconInstance;
 
     [Header("Dynamic Data")]
     [SerializeField] private bool isInit;
+    private ITaskSource draggedSource;
 
     [Header("Reference")]
     [SerializeField] Canvas uiCanvas;
-    
-
-    private ITaskSource draggedSource;
-    private GameObject dragIconInstance;
     private RectTransform dragIconRect;
     private Camera mainCamera;
 
+    [Header("Event")]
+    public UnityEvent<ChefController> onTaskDrop;
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -67,6 +68,7 @@ public class DragDropTaskSystem : MonoBehaviour
                 {
                     var task = new ChefTask(draggedSource.GetInteractable(), draggedSource.GetIcon());
                     chef.AddTask(task);
+                    onTaskDrop.Invoke(chef.Chef);
                 }
                 else
                 {

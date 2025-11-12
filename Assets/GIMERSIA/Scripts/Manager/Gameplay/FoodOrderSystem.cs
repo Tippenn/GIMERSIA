@@ -56,12 +56,9 @@ public class FoodOrderSystem : Singleton<FoodOrderSystem>
     public void GenerateOrder()
     {
         ItemInformation itemOrder;
-        int index;
-        do
-        {
-            index = Random.Range(0, itemDatabase.itemData.Count);
-            itemOrder = itemDatabase.itemData[index];
-        } while (itemOrder.orderID  == -1);
+        int index = Random.Range(0, GameplayManager.Instance.PossibleOrder.Count);
+        int orderID = GameplayManager.Instance.PossibleOrder[index];
+        itemOrder = itemDatabase.itemData[itemDatabase.itemData.FindIndex(x => x.orderID == orderID)];
         
         GameObject foodOrderGO = Instantiate(orderPrefab,orderParent);
         FoodOrder foodOrder = foodOrderGO.GetComponent<FoodOrder>();
@@ -84,8 +81,8 @@ public class FoodOrderSystem : Singleton<FoodOrderSystem>
             List<int> ingredientList = orders[i].ItemInformation.ingredientID;
             if (HaveSameElements(ingredientList, recipe.GetIngredientID()) == true)
             {
+                AudioManager.Instance.PlaySFXOneShot(AudioManager.Instance.cashRegister);
                 onOrderFulfilled?.Invoke(orders[i]);
-                orders.RemoveAt(i);
                 Debug.Log("Have Same Element");
             }
         }

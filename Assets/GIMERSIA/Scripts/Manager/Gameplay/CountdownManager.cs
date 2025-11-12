@@ -10,9 +10,11 @@ public class CountdownManager : Singleton<CountdownManager>
     [Header("Dynamic Data")]
     [SerializeField] private float currentCountdown;
     [SerializeField] private bool countdownFinish;
+    [SerializeField] private bool isInit;
     
     [Header("Reference")]
     [SerializeField] private TMP_Text countdownText;
+    [SerializeField] private GameObject countdownPanel;
 
     [Header("Event")]
     [SerializeField] private UnityEvent onCountdownFinish;
@@ -22,12 +24,30 @@ public class CountdownManager : Singleton<CountdownManager>
         currentCountdown = countdownTime;
     }
 
+    public void Initialize()
+    {
+        countdownPanel.SetActive(true);
+        isInit = true;
+        
+    }
+
     private void Update()
     {
+        if (!isInit) return;
         if (currentCountdown < 0 && countdownFinish) return;
         currentCountdown -= Time.deltaTime;
+        if(currentCountdown < 1f)
+        {
+            countdownText.text = "GOOO!!";
+        }
+        else
+        {
+            countdownText.text = currentCountdown.ToString("F0");
+        }
+        
         if(currentCountdown < 0 && !countdownFinish)
         {
+            countdownPanel.SetActive(false);
             onCountdownFinish?.Invoke();
             countdownFinish = true;
         }

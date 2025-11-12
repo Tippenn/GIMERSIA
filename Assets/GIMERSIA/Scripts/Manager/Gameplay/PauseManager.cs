@@ -4,6 +4,7 @@ public class PauseManager : PersistentSingleton<PauseManager>
 {
     [Header("Static Data")]
     [Header("Dynamic Data")]
+    [SerializeField] private bool isiInit;
     [SerializeField] private bool isPaused;
 
     [Header("Reference")]
@@ -11,10 +12,16 @@ public class PauseManager : PersistentSingleton<PauseManager>
 
     private void Update()
     {
+        if (!isiInit) return;
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             PerformPause();
         }
+    }
+
+    public void Initialize(GameplayManager gameplayManager)
+    {
+        isiInit = true;
     }
 
     public void PerformPause()
@@ -31,5 +38,15 @@ public class PauseManager : PersistentSingleton<PauseManager>
             Time.timeScale = 0;
             pausePanel.SetActive(true);
         }
+    }
+
+    public void Button_Resume()
+    {
+        PerformPause();
+    }
+
+    public void Button_MainMenu()
+    {
+        GameManager.Instance.ChangeScene("MainMenuScene");
     }
 }

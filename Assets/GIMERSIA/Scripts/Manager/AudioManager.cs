@@ -8,7 +8,7 @@ public class AudioManager : PersistentSingleton<AudioManager>
     [SerializeField] private string masterVolumeParam = "MasterParam";
     [SerializeField] private string bgmVolumeParam = "BGMParam";
     [SerializeField] private string sfxVolumeParam = "SFXParam";
-    [SerializeField] private string fileLocation = "AudioSettings";
+    [SerializeField] private static readonly string fileLocation = "AudioSettings";
 
     [Header("Source")]
     public AudioSource BGM;
@@ -16,8 +16,19 @@ public class AudioManager : PersistentSingleton<AudioManager>
 
     [Header("Clip")]
     [Header("BGM")]
+    public AudioClip mainMenuBGM;
+    public AudioClip gameplayBGM;
     [Header("SFX")]
-    public bool biarGaError;
+    public AudioClip countdown;
+    public AudioClip cuttingBoard;
+    public AudioClip bellOrder;
+    public AudioClip cashRegister;
+    public AudioClip item;
+    public AudioClip warning;
+    public AudioClip peluit;
+    public AudioClip win;
+    public AudioClip lose;
+
 
 
     public string FileLocation => fileLocation;

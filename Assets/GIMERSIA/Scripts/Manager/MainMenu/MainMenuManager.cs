@@ -6,7 +6,6 @@ public class MainMenuManager : Singleton<MainMenuManager>
 {
     [Header("Static Data")]
     [SerializeField] private string gameplayScene;
-    [SerializeField] private string gameContextFileDirection;
     [SerializeField] private int unlockedLevel = 0;
     [Header("Dynamic Data")]
     [SerializeField] private int currentLevelSelected = 0;
@@ -20,13 +19,29 @@ public class MainMenuManager : Singleton<MainMenuManager>
     protected override void Awake()
     {
         base.Awake();
-        SaveSystem.LoadObject<SaveObject_GameContext>(gameContextFileDirection);
+        SaveObject_GameContext gameContext = SaveSystem.LoadObject<SaveObject_GameContext>(GameManager.Instance.GameContextLocation);
+        if(gameContext != null)
+        {
+            unlockedLevel = gameContext.UnlockedLevel;
+        }
+        else
+        {
+            unlockedLevel = 0;
+        }
+        
+    }
+
+    private void Start()
+    {
+        AudioManager.Instance.ChangeBGM(AudioManager.Instance.mainMenuBGM);
     }
 
     #region Button
     public void Button_PlayPanel_Play()
     {
-        GameManager.Instance.ChangeScene(gameplayScene + currentLevelSelected.ToString());
+        AudioManager.Instance.PauseBGM();   
+        GameManager.Instance.CurrentLevelPlayed = currentLevelSelected;
+        GameManager.Instance.ChangeScene(GameManager.Instance.GameplaySceneLocation + currentLevelSelected.ToString());
     }
 
     public void Button_PlayPanel_NextLevel()

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 451e4a0a25ae0144988e7bab178ed483, type: 3}
   m_Name: LevelVisual_2
   m_EditorClassIdentifier: 
-  level: 1
-  levelTitle: Level Pertama
-  levelChapter: 0.1
-  scoreNeededForStar1: 200
-  scoreNeededForStar2: 400
-  scoreNeededForStar3: 600
+  level: 2
+  levelTitle: Level Ketiga
+  levelChapter: 0.2
+  scoreNeededForStar1: 120
+  scoreNeededForStar2: 260
+  scoreNeededForStar3: 450
   levelSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
