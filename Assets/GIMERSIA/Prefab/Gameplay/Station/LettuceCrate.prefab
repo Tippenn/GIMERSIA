@@ -169,6 +169,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3896109039311912668, guid: 88d71c66ae7d1c34e89f1ee6e8bbe773, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7555111260523546945, guid: 88d71c66ae7d1c34e89f1ee6e8bbe773, type: 3}
       propertyPath: m_Name
       value: LettuceChest_V2

@@ -12,6 +12,7 @@ public class GameplayManager : Singleton<GameplayManager>
     [SerializeField] private ChefActivitiesData chefActivitiesData;
     [SerializeField] private List<int> possibleOrder;
     [SerializeField] private float startTime;
+    [SerializeField] private float baseOrderScore;
     [SerializeField] private bool debugMode;
 
 
@@ -31,6 +32,7 @@ public class GameplayManager : Singleton<GameplayManager>
     public IngredientVisualData GetIngredientVisualDatabase => ingredientVisualData;
     public ChefActivitiesData GetChefActivitiesData => chefActivitiesData;
     public List<int> PossibleOrder => possibleOrder;
+    public float BaseOrderScore => baseOrderScore;
     public float CurrentScore => currentScore;
     public float StartTime => startTime;
     public float TimeLeft => timeLeft;

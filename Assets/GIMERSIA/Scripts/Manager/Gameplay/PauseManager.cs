@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PauseManager : PersistentSingleton<PauseManager>
+public class PauseManager : Singleton<PauseManager>
 {
     [Header("Static Data")]
     [Header("Dynamic Data")]

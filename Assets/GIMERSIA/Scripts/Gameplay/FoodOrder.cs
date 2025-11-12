@@ -49,7 +49,7 @@ public class FoodOrder : MonoBehaviour
     {
         if(foodOrder == this)
         {
-            float scoreAddAmount = 20f + (20 * (timeLeft/maxTime));
+            float scoreAddAmount = GameplayManager.Instance.BaseOrderScore * (itemInformation.ingredientID.Count-1) + (GameplayManager.Instance.BaseOrderScore * (timeLeft/maxTime) * 2);
             GameplayManager.Instance.AddScore(scoreAddAmount);
             onFoodOrderDelete?.Invoke(this);
             Destroy(gameObject);
