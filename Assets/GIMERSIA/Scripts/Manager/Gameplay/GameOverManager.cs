@@ -62,6 +62,7 @@ public class GameOverManager : MonoBehaviour
             }
             else
             {
+                gameContext = new SaveObject_GameContext();
                 gameContext.UnlockedLevel = GameManager.Instance.CurrentLevelPlayed + 1;
                 SaveSystem.SaveObject(GameManager.Instance.GameContextLocation, gameContext);
             }

@@ -10,10 +10,13 @@ EditorBuildSettings:
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
     path: Assets/GIMERSIA/Scenes/ActualGames/SceneLevel0.unity
-    guid: 57d57fa10d956ed4b8846b75e92ccde8
+    guid: 7fcea59a4072016438a638a2ffde47bb
   - enabled: 1
     path: Assets/GIMERSIA/Scenes/ActualGames/SceneLevel1.unity
-    guid: 4ac2ddf9d3a7e924396deafcdeaff33f
+    guid: f8c6be77fbcc5474b89bff8efe05f535
+  - enabled: 1
+    path: Assets/GIMERSIA/Scenes/ActualGames/SceneLevel2.unity
+    guid: 5b32f9c3ccef36749a78219e97e454d2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
