@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: LevelVisual_1
   m_EditorClassIdentifier: 
   level: 1
-  levelTitle: Level Kedua
-  levelChapter: 0.1
+  levelTitle: 'Outpost Kitchen '
+  levelChapter: 'Outpost Kitchen '
   scoreNeededForStar1: 100
   scoreNeededForStar2: 200
   scoreNeededForStar3: 350
-  levelSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  levelSprite: {fileID: -1023840636, guid: c7e220d5848ce194284ddc436954bebe, type: 3}

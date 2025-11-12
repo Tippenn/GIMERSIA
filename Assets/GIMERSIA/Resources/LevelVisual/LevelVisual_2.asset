@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: LevelVisual_2
   m_EditorClassIdentifier: 
   level: 2
-  levelTitle: Level Ketiga
-  levelChapter: 0.2
+  levelTitle: 'Chaos Spaceship '
+  levelChapter: 'Chaos Spaceship '
   scoreNeededForStar1: 120
   scoreNeededForStar2: 260
   scoreNeededForStar3: 450
-  levelSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  levelSprite: {fileID: 691650282, guid: 516cc57d2985fbc48b3b53e1285aea50, type: 3}

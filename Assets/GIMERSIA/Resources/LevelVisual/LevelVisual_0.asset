@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: LevelVisual_0
   m_EditorClassIdentifier: 
   level: 0
-  levelTitle: Tutorial
-  levelChapter: 0.0
+  levelTitle: 'Orbit Training '
+  levelChapter: 'Orbit Training '
   scoreNeededForStar1: 50
   scoreNeededForStar2: 100
   scoreNeededForStar3: 200
-  levelSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  levelSprite: {fileID: 517221254, guid: 08f0d50dc64bbea40b5e4b206d3e9af2, type: 3}
