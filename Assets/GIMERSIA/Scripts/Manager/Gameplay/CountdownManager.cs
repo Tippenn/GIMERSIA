@@ -34,15 +34,15 @@ public class CountdownManager : Singleton<CountdownManager>
     private void Update()
     {
         if (!isInit) return;
-        if (currentCountdown < 0 && countdownFinish) return;
+        if (currentCountdown <= 0 && countdownFinish) return;
         currentCountdown -= Time.deltaTime;
-        if(currentCountdown < 1f)
+        if(currentCountdown <= 1f)
         {
             countdownText.text = "GOOO!!";
         }
         else
         {
-            countdownText.text = currentCountdown.ToString("F0");
+            countdownText.text = (Mathf.CeilToInt(currentCountdown) - 1).ToString("F0");
         }
         
         if(currentCountdown < 0 && !countdownFinish)

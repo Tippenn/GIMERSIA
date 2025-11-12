@@ -183,9 +183,10 @@ MonoBehaviour:
   SFX: {fileID: 1075583075051984941}
   mainMenuBGM: {fileID: 8300000, guid: 0f256a90dbb5e49e2be30d380e2f9691, type: 3}
   gameplayBGM: {fileID: 8300000, guid: 0d6ea583b15dd455ba6f95b54d8e964a, type: 3}
-  countdown: {fileID: 8300000, guid: 1c4a9d234a0c1a640a143956dd7be2f4, type: 3}
+  countdown: {fileID: 8300000, guid: c2f3ed84cf9880246b703821afde9b25, type: 3}
   cuttingBoard: {fileID: 8300000, guid: 18ea502aaab28af4a9d2fae2069500cb, type: 3}
   bellOrder: {fileID: 8300000, guid: 2a5760d4da86bee4ea8d9ef3eeed9c50, type: 3}
+  trashCan: {fileID: 8300000, guid: fb869ac4b1dd47445b35da0da6d83939, type: 3}
   cashRegister: {fileID: 8300000, guid: 81f57e7de112649f2841434bc3410950, type: 3}
   item: {fileID: 8300000, guid: 5940afafc2a725f4a81b2f6e20f0fee7, type: 3}
   warning: {fileID: 8300000, guid: d0d0ec61910f8494bb5774eb2b13eb1a, type: 3}

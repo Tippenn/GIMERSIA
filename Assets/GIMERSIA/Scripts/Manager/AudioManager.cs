@@ -22,6 +22,7 @@ public class AudioManager : PersistentSingleton<AudioManager>
     public AudioClip countdown;
     public AudioClip cuttingBoard;
     public AudioClip bellOrder;
+    public AudioClip trashCan;
     public AudioClip cashRegister;
     public AudioClip item;
     public AudioClip warning;

@@ -24,6 +24,7 @@ public class TrashCrate : MonoBehaviour, IInteractable, ITaskSource
         if (chef.IsHoldingItem)
         {
             IHoldable item = chef.GetHeldItem;
+            AudioManager.Instance.PlaySFXOneShot(AudioManager.Instance.trashCan);
             PlaceItem(item, chef);
         }
         isOccupied = false;

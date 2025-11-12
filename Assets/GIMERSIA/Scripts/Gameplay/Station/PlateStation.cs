@@ -24,9 +24,16 @@ public class PlateStation : MonoBehaviour, IInteractable, ITaskSource
 
     public IEnumerator OnInteract(ChefController chef)
     {
-        GameObject prefab = Instantiate(platePrefab);
-        Debug.Log("Is Interacting");
-        chef.HoldItem(prefab);
+        if (chef.IsHoldingItem)
+        {
+            AudioManager.Instance.PlaySFXOneShot(AudioManager.Instance.warning);
+        }
+        else
+        {
+            GameObject prefab = Instantiate(platePrefab);
+            Debug.Log("Is Interacting");
+            chef.HoldItem(prefab);
+        }
         yield return null;
     }
 }
