@@ -70,17 +70,9 @@ Asset
 
 ## Gameplay
 
-Players begin with a barren landscape where resources are scarce. To restore the environment, they must strategically construct infrastructure that supports food production.
+Players control a service robot by issuing commands through a drag-and-drop interface. The robot can interact with various kitchen stations, such as ingredient stations and cutting stations, to prepare customer orders.
 
-Progression requires balancing dependencies between buildings—for example:
-
-- Generate electricity
-- Supply water
-- Build farmland
-- Produce food
-- Deliver food to famine-stricken areas
-
-Each level is completed once every area has received its required food supply.
+The objective is to complete as many orders as possible before the timer expires. At the end of each level, players are awarded a star rating based on their score, with at least **one star** required to successfully complete the stage.
 
 ---
 
@@ -88,9 +80,9 @@ Each level is completed once every area has received its required food supply.
 
 | Action | Input |
 |---------|-------|
-| Camera Movement | Keyboard |
-| Building Placement | Mouse |
-| Building Interaction | Mouse |
+| Issue Commands | Mouse (Drag & Drop) |
+| Interact with Stations | Mouse |
+| Queue Robot Actions | Mouse |
 
 ---
 
@@ -106,29 +98,28 @@ Each level is completed once every area has received its required food supply.
 
 ## My Contributions
 
-As the **sole programmer**, I was responsible for the complete gameplay implementation.
+As the **sole programmer**, I was responsible for the complete gameplay implementation and technical integration of the project.
 
 ### Gameplay Systems
 
-- Designed and implemented the grid-based building system
-- Developed the building interaction system
-- Implemented the save system
-- Developed dialogue functionality
-- Connected gameplay systems with designer-created content
+- Developed the core gameplay systems
+- Implemented the customer order queue system
+- Created the robot command queue system using a drag-and-drop interface
+- Developed the interaction logic for every kitchen station
 
-### Optimization
+### Designer Tools
 
-Optimized game performance, improving frame rate from approximately **10 FPS** to **150 FPS** during development.
+- Created ScriptableObject workflows that allowed designers to configure gameplay content without modifying code
 
-### Development Tools
+### Technical Integration
 
-Created custom tools and ScriptableObject workflows that enabled designers to configure:
+- Integrated game assets into the project
+- Configured gameplay systems with audio, visual, and scene components
+- Connected designer-created content with gameplay logic
 
-- Buildings
-- Level data
-- Gameplay parameters
+### Collaboration
 
-This significantly simplified the content creation pipeline.
+Worked closely with the game designer and artist to rapidly iterate on gameplay mechanics while maintaining a clean and scalable project architecture.
 
 ---
 
@@ -144,13 +135,15 @@ This significantly simplified the content creation pipeline.
 
 ## What I Learned
 
-This project strengthened my understanding of:
+This project reinforced the importance of building scalable systems from the beginning of development. By maintaining a clean architecture and modular gameplay systems, new features could be added without requiring major refactoring.
 
-- Designing scalable gameplay systems
-- Creating reusable tools for non-programmers
-- Performance optimization in Unity
+Additionally, I gained valuable experience in:
+
+- Designing maintainable gameplay systems
+- Creating reusable tools for designers through ScriptableObjects
+- Structuring projects for long-term scalability
 - Collaborating effectively within a multidisciplinary team
-- Organizing large gameplay codebases
+- Developing gameplay features while keeping the codebase organized and sustainable
 
 ---
 
